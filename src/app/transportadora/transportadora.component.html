@@ -1,0 +1,18 @@
+<h2>Minhas Transportadoras</h2>
+<ul class="transporta">
+  <li *ngFor = "let transpor of transp" 
+      [class.selected] ="transpor == transpSelecionada"
+      (click)="onSelect(transpor)">
+    <span class="badge">{{transpor.id}}</span>{{transpor.nome}}
+
+  </li>
+</ul>
+<div *ngIf ="transpSelecionada">
+<h2>{{transpSelecionada.nome | uppercase}}</h2>
+<div><span>id:</span>{{transpSelecionada.id}}</div>
+<div>
+  <label>
+    <input [(ngModel)]="transpSelecionada.nome" placeholder="Nome"/>
+  </label>
+</div>
+</div>
