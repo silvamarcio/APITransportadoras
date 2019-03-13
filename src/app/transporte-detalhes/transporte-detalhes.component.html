@@ -1,0 +1,9 @@
+<div *ngIf ="transpo">
+  <h2>{{transpo.nome | uppercase}}</h2>
+  <div><span>id:</span>{{transpo.id}}</div>
+  <div>
+    <label>
+      <input [(ngModel)]="transpo.nome" placeholder="Nome"/>
+    </label>
+  </div>
+  </div>
