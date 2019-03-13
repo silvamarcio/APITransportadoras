@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Transportadora} from '../Transportadora';
-import {TranspList} from '../TransportadorasTeste';
+import {ConsumeService} from '../consume.service';
 
 @Component({
   selector: 'app-transportadora',
@@ -9,16 +9,17 @@ import {TranspList} from '../TransportadorasTeste';
 })
 export class TransportadoraComponent implements OnInit {
 
-  transp = TranspList;
-  transpSelecionada: Transportadora;
+  transp: Transportadora[];
+  
 
-  constructor() { }
+  constructor(private consumeService: ConsumeService) { }
 
   ngOnInit() {
+    this.getTransportadoras();
   }
 
-  onSelect(transport: Transportadora): void {
-    this.transpSelecionada = transport;
+  getTransportadoras(): void{
+     this.consumeService.getTransport().subscribe(transp => this.transp = transp);
   }
 
 }

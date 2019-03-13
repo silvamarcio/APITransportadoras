@@ -1,10 +1,9 @@
 <h2>Minhas Transportadoras</h2>
 <ul class="transporta">
-  <li *ngFor = "let transpor of transp" 
-      [class.selected] ="transpor == transpSelecionada"
-      (click)="onSelect(transpor)">
+  <li *ngFor = "let transpor of transp" >
+      <a routerLink="/detalhes/{{transpor.id}}">
     <span class="badge">{{transpor.id}}</span>{{transpor.nome}}
+  </a>
   </li>
 </ul>
 
-<app-transporte-detalhes [transpo]="transpSelecionada"></app-transporte-detalhes>

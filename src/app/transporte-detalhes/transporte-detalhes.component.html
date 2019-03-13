@@ -2,8 +2,9 @@
   <h2>{{transpo.nome | uppercase}}</h2>
   <div><span>id:</span>{{transpo.id}}</div>
   <div>
-    <label>
+    <label>Nome:
       <input [(ngModel)]="transpo.nome" placeholder="Nome"/>
     </label>
   </div>
+  <button (click)="goBack()">Retornar</button>
   </div>
